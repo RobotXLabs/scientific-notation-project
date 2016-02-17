@@ -2,25 +2,42 @@
 <html>
   <head>
     <title>Scientific Notation</title>
-    <link href='https://fonts.googleapis.com/css?family=Metrophobic' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Metrophobic" rel="stylesheet" type="text/css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">
     <style>
       * {
-        font-family: Metrophobic;
+        font-family: "Metrophobic" !important;
       }
-      h1#title {
-
+      #title {
+        text-align: center;
+        color: #000;
+        margin-bottom: 0;
+      }
+      #subtitle {
+        text-align: center;
+        color: #999;
+        font-style: italic;
+        margin-top: 0;
+      }
+      #twitter-fact, #yt-fact, #fb-fact, #google-fact {
+        text-align: center;
+      }
+      .partofthemap {
+        display: table;
+        margin: 0 auto;
       }
     </style>
   </head>
   <body>
-    <h1 id="tltle">Scientific Notation</h1>
+    <h1 id="title">Scientific Notation</h1>
     <h2 id="subtitle">by c22am</h3>
-    <p id="twitter-fact" style="display: none;">1</p>
-    <p id="yt-fact" style="display: none;">2</p>
-    <p id="fb-fact" style="display: none;">3</p>
+    <div class="fact alert alert-success" id="twitter-fact" style="display: none;">Twitter <button onclick="changeAlert(0,1)">Hide</button></div>
+    <div class="fact alert alert-success" id="yt-fact" style="display: none;">YouTube <button onclick="changeAlert(0,2)">Hide</button></div>
+    <div class="fact alert alert-success" id="fb-fact" style="display: none;">Facebook <button onclick="changeAlert(0,3)">Hide</button></div>
+    <div class="fact alert alert-success" id="google-fact" style="display: none;">Google <button onclick="changeAlert(0,4)">Hide</button></div>
     <p id="google-fact" style="display: none;">4</p>
-    <img src="images/map.png" alt="" usemap="#computersmap" />
-    <map name="computersmap" id="computersmap">
+    <img class="partofthemap" src="images/map.png" alt="" usemap="#computersmap" />
+    <map class="partofthemap" name="computersmap" id="computersmap">
       <area onclick="changeAlert(1, 1);" id="show-tw" alt="" href="#" title="Twitter" shape="rect" coords="0,0,500,305" />
       <area onclick="changeAlert(1, 2);" id="show-yt" alt="" href="#" title="YouTube" shape="rect" coords="500,0,1000,305" />
       <area onclick="changeAlert(1, 3);" id="show-fb" alt="" href="#" title="Facebook" shape="rect" coords="0,305,500,610" />
@@ -29,7 +46,7 @@
     <script>
       /* For change, 0 is hide and 1 is show. For num, 1 is Twitter, 2 is YouTube, 3 is Facebook, and 4 is Google. */
       function changeAlert(change, num) {
-        if (change==1){
+        if (change==0){
           if (num==1) {
             document.querySelector("#twitter-fact").setAttribute("style", "display: none;");
           }
