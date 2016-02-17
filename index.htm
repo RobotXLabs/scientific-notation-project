@@ -3,18 +3,61 @@
   <head>
     <!-- Styles -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    <!-- Scripts -->
-    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
   </head>
   <body>
     <h1>Scientific Notation</h1>
     <img src="images/map.png" alt="" usemap="#computersmap" />
     <map name="computersmap" id="computersmap">
-      <area alt="" title="" href="#" shape="rect" coords="0,0,500,305" />
-      <area alt="" title="" href="#" shape="rect" coords="500,0,1000,305" />
-      <area alt="" title="" href="#" shape="rect" coords="0,305,500,610" />
-      <area alt="" title="" href="#" shape="rect" coords="500,305,1000,610" />
+      <area onclick="showAlert(1);" id="show-tw" alt="" href="#" title="Twitter" shape="rect" coords="0,0,500,305" />
+      <area onclick="showAlert(2);" alt="" href="#" title="YouTube" shape="rect" coords="500,0,1000,305" />
+      <area onclick="showAlert(3);" alt="" href="#" title="Facebook" shape="rect" coords="0,305,500,610" />
+      <area onclick="showAlert(4);" alt="" href="#" title="Google" shape="rect" coords="500,305,1000,610" />
     </map>
+    <p id="twitter-fact" style="display: none;">1</p>
+    <p id="yt-fact" style="display: none;">2</p>
+    <p id="fb-fact" style="display: none;">3</p>
+    <p id="google-fact" style="display: none;">4</p>
+    <script>
+      function removeAlert(num) {
+        if (num==1) {
+          document.querySelector("#twitter-fact").setAttribute("style", "display: none;");
+        }
+        else if (num==2) {
+          document.querySelector("#yt-fact").setAttribute("style", "display: none;");
+        }
+        else if (num==3) {
+          document.querySelector("#fb-fact").setAttribute("style", "display: none;");
+        }
+        else if (num==4) {
+          document.querySelector("#google-fact").setAttribute("style", "display: none;");
+        }
+      }
+      function showAlert(num) {
+        if (num==1) {
+          document.querySelector("#twitter-fact").setAttribute("style", "display: block;");
+          document.querySelector("#fb-fact").setAttribute("style", "display: none;");
+          document.querySelector("#google-fact").setAttribute("style", "display: none;");
+          document.querySelector("#yt-fact").setAttribute("style", "display: none;");
+        }
+        else if (num==2) {
+          document.querySelector("#yt-fact").setAttribute("style", "display: block;");
+          document.querySelector("#fb-fact").setAttribute("style", "display: none;");
+          document.querySelector("#google-fact").setAttribute("style", "display: none;");
+          document.querySelector("#twitter-fact").setAttribute("style", "display: none;");
+        }
+        else if (num==3) {
+          document.querySelector("#fb-fact").setAttribute("style", "display: block;");
+          document.querySelector("#twitter-fact").setAttribute("style", "display: none;");
+          document.querySelector("#google-fact").setAttribute("style", "display: none;");
+          document.querySelector("#yt-fact").setAttribute("style", "display: none;");
+        }
+        else if (num==4) {
+          document.querySelector("#google-fact").setAttribute("style", "display: block;");
+          document.querySelector("#fb-fact").setAttribute("style", "display: none;");
+          document.querySelector("#twitter-fact").setAttribute("style", "display: none;");
+          document.querySelector("#yt-fact").setAttribute("style", "display: none;");
+        }
+      }
+    </script>
   </body>
 </html>
