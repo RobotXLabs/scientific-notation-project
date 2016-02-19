@@ -2,7 +2,6 @@
 <html>
   <head>
     <title>Scientific Notation</title>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha256-KXn5puMvxCw+dAYznun+drMdG1IFl3agK0p/pqT9KAo= sha512-2e8qq0ETcfWRI4HJBzQiA3UoyFk6tbNyG+qSaIBZLyW9Xf3sWZHN/lxe9fTh1U45DpPf07yj94KsUHHWe4Yk1A==" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet" type="text/css">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">
     <style>
@@ -20,7 +19,12 @@
         font-style: italic;
         margin-top: 0;
       }
-      #twitter-fact, #yt-fact, #fb-fact, #google-fact {
+      #subsubtitle {
+        text-align: center;
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+      .fact {
         text-align: center;
       }
       .partofthemap {
@@ -32,11 +36,11 @@
   <body>
     <h1 id="title">Scientific Notation</h1>
     <h2 id="subtitle">by c22am</h3>
+    <p id="subsubtitle">Below is an image of four different internet sites. Clicking each one will reveal a scientific notation fact about it.</p>
     <div class="fact alert alert-success" id="twitter-fact" style="display: none;">Twitter has approximately 320,000,000 monthly active users. That is 3.2 * 10<sup>8</sup> users. <button onclick="changeAlert(0,1)">Hide</button></div>
     <div class="fact alert alert-success" id="yt-fact" style="display: none;">Every day, the YouTube community watches over 100,000,000 hours of YouTube. That is 1 * 10<sup>8</sup> hours. <button onclick="changeAlert(0,2)">Hide</button></div>
     <div class="fact alert alert-success" id="fb-fact" style="display: none;">Facebook had 1,090,000,000 daily average users in December 2015. That is 1.09 * 10<sup>9</sup> users. <button onclick="changeAlert(0,3)">Hide</button></div>
     <div class="fact alert alert-success" id="google-fact" style="display: none;">Google&#39;s most popular internet search in 2015 was the Paris attack, which got over 897,000,000 searches. That is 8.97 * 10<sup>8</sup> searches. <button onclick="changeAlert(0,4)">Hide</button></div>
-    <p id="google-fact" style="display: none;">4</p>
     <img class="partofthemap" src="images/map.png" alt="" usemap="#computersmap" />
     <map class="partofthemap" name="computersmap" id="computersmap">
       <area onclick="changeAlert(1, 1);" id="show-tw" alt="" href="#" title="Twitter" shape="rect" coords="0,0,500,305" />
